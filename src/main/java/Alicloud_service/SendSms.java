@@ -27,7 +27,7 @@ public class SendSms {
         //String code =
 
         String p=u.getPho();
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAIPTVKDnbteHJn", "Hm5O1SSCPlcD73lo4KaedM6tLt1Nk5");
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "", "");
         IAcsClient client = new DefaultAcsClient(profile);
         CommonRequest request = new CommonRequest();
         request.setMethod(MethodType.POST);
@@ -36,8 +36,8 @@ public class SendSms {
         request.setAction("SendSms");
         request.putQueryParameter("RegionId", "cn-hangzhou");
         request.putQueryParameter("PhoneNumbers", p);
-        request.putQueryParameter("TemplateCode", "SMS_171352184");
-        request.putQueryParameter("SignName", "智能家居");
+        request.putQueryParameter("TemplateCode", "");
+        request.putQueryParameter("SignName", "");
         request.putQueryParameter("TemplateParam", 	"{\"code\":"+i+"}");
         try {
             CommonResponse response = client.getCommonResponse(request);
